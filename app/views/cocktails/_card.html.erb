@@ -1,0 +1,11 @@
+<div class="pic-cocktail mb-5">
+  <div><h3><%= @cocktail.name %></h3>
+  <% @cocktail.doses.each do |dose| %>
+    <ul>
+      <li>
+        <%= dose.ingredient.name %> | <%= dose.description %>
+      </li>
+    </ul>
+  <% end %>
+  </div>
+</div>

@@ -1,5 +1,6 @@
+
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <%= link_to "#", class: "navbar-brand" do %>
+  <%= link_to "/", class: "navbar-brand" do %>
     <i class="fas fa-cocktail"></i>
     <% end %>
 
@@ -11,42 +12,35 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Home", "#", class: "nav-link" %>
+        <%= link_to "Home", "/", class: "nav-link" %>
       </li>
       <li class="nav-item">
         <%= link_to "Add a cocktail", "cocktails/new", class: "nav-link" %>
       </li>
-      <li class="nav-item dropdown">
-      </li>
     </ul>
   </div>
 </div>
-
-<div class="container text-center mt-5">
-  <h1>Here the best cocktails<br><strong>we need</strong></h1>
-
-
-
-    <!-- Grid row -->
+<div class ="img-fluid text-center bg-primary" style="background-image: url('https://static-cms.carrefour.fr/sites/default/files/2019-06/apero-banner_page_edito_2880x720_2019.jpg?itok=Dq1Mh--J'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+  <h1 class="p-5 text-white">Here the best cocktails<br><strong>we need</strong></h1>
+</div>
+<div class="container text-center">
+  <br>
   <div class="row">
-    <!-- Card -->
     <% @cocktails.each do |cocktail| %>
-
-    <div class="col-xs-12 col-sm-4">
-      <div class="card" style="background-color:blue,
-        <div class="card-description">
-          <h2> <%= cocktail.name  %> </h2>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card shadow-sm p-3 mb-3 bg-white rounded border-0">
+          <div class="card-description text-decoration-none text-warning">
+            <img src="https://images.italy-villas.fr/ccontent_page/3862341496414451xx/medium/alcohol-1853327_1920-1.jpg" class="img-fluid" alt="Cocktail">
+            <h5 class="p-3"><%= link_to cocktail.name, cocktail_path(cocktail), class: "card-link" %></h5>
+          </div>
         </div>
-        <%= link_to "", cocktail_path(cocktail), class: "card-link" %>
       </div>
-    </div>
     <% end %>
   </div>
+</div>
+<footer class="page-footer font-small">
 
-  <!-- Add button -->
-  <div class="pad10">
-    <%= link_to "Add your cocktail", new_cocktail_path, class: "btn btn-primary pad20" %>
+  <div class="footer-copyright text-center py-3">© 2020 Copyright TQ - <u>Mentions legales</u>
   </div>
 
-<!-- Close main div -->
-</div>
+</footer>
